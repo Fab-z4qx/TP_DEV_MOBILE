@@ -1,10 +1,13 @@
 package genet.fabien.tp3;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -43,6 +46,14 @@ public class PaysAdapter extends BaseAdapter {
 
         TextView descPays = (TextView) li.findViewById(R.id.PAYS_DESC);
         descPays.setText(listeP.get(pos).getDescription());
+
+        ImageView img = (ImageView)li.findViewById(R.id.IMG_PAYS);
+
+        String uri = "@drawable/"+ listeP.get(pos).getImage();
+        Log.d("Imageeee", uri);
+        int imageResource = li.getResources().getIdentifier(uri, null,this.context.getPackageName());
+        Drawable res = li.getResources().getDrawable(imageResource);
+        img.setImageDrawable(res);
 
         return li;
     }

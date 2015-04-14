@@ -2,9 +2,7 @@ package genet.fabien.tp3;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +14,8 @@ import java.util.ArrayList;
 
 public class ListPaysActivity extends Activity {
 
-    public final static String MSG_PHOTO = "genet.fabien.tp3";
+    //public final static String MSG_PHOTO = "genet.fabien.tp3.photo";
+    public final static String MSG_TYPE = "genet.fabien.tp3.type";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,6 @@ public class ListPaysActivity extends Activity {
         // création et initialisation de l'Adapter associé
         PaysAdapter adapter = new PaysAdapter(this, listeP);
 
-        Log.d("Buggg", "Buggg");
         // récupération du composant ListView
         ListView l = (ListView)findViewById(R.id.listViewPays);
         // initialisation de la liste avec les données
@@ -37,7 +35,6 @@ public class ListPaysActivity extends Activity {
         l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Pays p = (Pays)adapterView.getItemAtPosition(i);
-                //afficherMessage(p, i);
                 startActivity(p, i);
             }
         });
@@ -45,13 +42,9 @@ public class ListPaysActivity extends Activity {
 
     public void startActivity(Pays item, int position)
     {
-        Intent intent = new Intent(this, UnePhotoActivity.class);
-        // Sauvegarde du nom dans l’intention
-
-        Bundle b = new Bundle();
-        b.putParcelable(MSG_PHOTO, item);
-        intent.putExtras(b);
-
+        Intent intent = new Intent(this, ListPhotoActivity.class);
+        String b = "fr";
+        intent.putExtra(MSG_TYPE, item.getId());
         // Lancement de l’activité
         startActivity(intent);
     }

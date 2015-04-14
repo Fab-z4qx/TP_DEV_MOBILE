@@ -12,20 +12,22 @@ public class Pays implements Parcelable {
     private String nom;
     private String description;
     private String image;
+    private String id;
 
-    public Pays(String nom, String description, String image)
+    public Pays(String nom, String description, String image, String id)
     {
         this.nom = nom;
         this.description = description;
         this.image = image;
+        this.id = id;
     }
 
     public static ArrayList<Pays> initialiser () {
         ArrayList<Pays> ListePays = new ArrayList<Pays>();
 
-        ListePays.add(new Pays("Etat Unis", "Pays du burger","usa"));
-        ListePays.add(new Pays("France", "Pays du Fromage","fr"));
-        ListePays.add(new Pays("Espagne", "Pays du saucisson","esp"));
+        ListePays.add(new Pays("Etat Unis", "Pays du burger","usa", "usa"));
+        ListePays.add(new Pays("France", "Pays du Fromage","fr", "fr"));
+        ListePays.add(new Pays("Espagne", "Pays du saucisson","esp", "esp"));
 
         return ListePays;
     }
@@ -64,5 +66,9 @@ public class Pays implements Parcelable {
         parcel.writeString(nom);
         parcel.writeString(description);
         parcel.writeString(image);
+    }
+
+    public String getId() {
+        return id;
     }
 }
