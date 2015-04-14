@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TP3</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_une_photo">UnePhotoActivity</string>
+    <string name="title_activity_list_pays">ListPaysActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="title_section1">Menu</string>
+    <string name="title_section2">Quitter</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+
+</resources>
