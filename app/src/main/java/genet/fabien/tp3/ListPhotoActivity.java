@@ -3,6 +3,7 @@ package genet.fabien.tp3;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,12 +30,15 @@ public class ListPhotoActivity extends ActionBarActivity {
         {
             case "usa":
                 listeP = Photo.initialiser("usa");
+                setTitle("Etat-Unis");
                 break;
             case "esp":
                 listeP = Photo.initialiser("esp");
+                setTitle("Espagne");
                 break;
             case "fr":
                 listeP = Photo.initialiser("fr");
+                setTitle("France");
                 break;
         }
 
@@ -85,7 +89,8 @@ public class ListPhotoActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Log.d("QUITTEr", "QUITTERzz");
+            android.os.Process.killProcess(android.os.Process.myPid());
         }
 
         return super.onOptionsItemSelected(item);

@@ -30,6 +30,8 @@ public class UnePhotoActivity extends ActionBarActivity {
 
         nom.setText(p.getNom());
         description.setText(p.getDescription());
+
+        setTitle(p.getNom());
     }
 
 
